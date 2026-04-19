@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieve</title>
+    <script>
+        function getCookie(name) {
+            let cookies = document.cookie.split("; ");
+            for (let c of cookies) {
+                let [key, value] = c.split("=");
+                if (key === name) return value;
+            }
+        }
+
+        function retrieve() {
+            let mobile = document.getElementById("mobile").value;
+            let data = getCookie(mobile);
+
+            if (data) {
+                alert(data);
+            } else {
+                alert("No data found");
+            }
+        }
+    </script>
+</head>
+<body>
+
+Enter Mobile: <input type="text" id="mobile">
+<button onclick="retrieve()">Retrieve Cookie</button>
+
+</body>
+</html>
